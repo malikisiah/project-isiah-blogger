@@ -20,10 +20,16 @@
     },
     "web": {
       "bundler": "metro",
-      "output": "static"
+      "output": "server"
     },
     "plugins": [
-      "expo-router"
+      [
+        "expo-router",
+        {
+          "origin": "https://n"
+        }
+      ],
+      "expo-font"
     ],
     "experiments": {
       "typedRoutes": true

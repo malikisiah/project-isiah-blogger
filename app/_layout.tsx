@@ -1,12 +1,12 @@
 import { Stack } from "expo-router";
-import { Providers } from "../components/providers";
+import { TRPCReactProvider } from "@/trpc/react";
 
 export default function RootLayout() {
   return (
-    <Providers>
+    <TRPCReactProvider>
       <Stack>
         <Stack.Screen name="index" />
       </Stack>
-    </Providers>
+    </TRPCReactProvider>
   );
 }
