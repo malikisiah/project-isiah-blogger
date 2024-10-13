@@ -5,7 +5,7 @@ export default function RootLayout() {
   return (
     <TRPCReactProvider>
       <Stack>
-        <Stack.Screen name="index" />
+        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
       </Stack>
     </TRPCReactProvider>
   );
