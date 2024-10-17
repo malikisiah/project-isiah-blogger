@@ -1,17 +1,26 @@
 import { Stack } from "expo-router";
 import { TRPCReactProvider } from "@/trpc/react";
-import { KeyboardProvider } from "react-native-keyboard-controller";
+import { PaperProvider, MD3DarkTheme } from "react-native-paper";
 import { StatusBar } from "expo-status-bar";
 
 export default function RootLayout() {
+  const theme = {
+    ...MD3DarkTheme,
+    colors: {
+      ...MD3DarkTheme.colors,
+      primary: "#22d3ee",
+      secondary: "black",
+    },
+  };
+
   return (
     <TRPCReactProvider>
-      <KeyboardProvider>
+      <PaperProvider theme={theme}>
+        <StatusBar style="light" />
         <Stack>
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         </Stack>
-        <StatusBar style="light" />
-      </KeyboardProvider>
+      </PaperProvider>
     </TRPCReactProvider>
   );
 }

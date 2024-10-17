@@ -1,21 +1,19 @@
-import ElementModal from "@/components/ElementModal";
-import { useState } from "react";
-import AntDesign from "@expo/vector-icons/AntDesign";
-import { Pressable, View } from "react-native";
-
+import { View, ScrollView } from "react-native";
+import { trpc } from "@/trpc/react";
+import ArticleCard from "@/components/ArticleCard";
 export default function Tab() {
-  const [open, setOpen] = useState(false);
+  const myPosts = trpc.api.getArticles.useQuery();
   return (
     <>
-      <View className="flex items-center min-h-screen bg-zinc-900">
-        <View className="mt-16">
-          <Pressable onPress={() => setOpen(true)}>
-            <AntDesign name="pluscircle" size={24} color="white" />
-          </Pressable>
+      <ScrollView className="flex min-h-screen bg-zinc-900 text-white">
+        <View className="mt-24 space-y-8">
+          {myPosts.data?.map((item, idx) => (
+            <View key={idx}>
+              <ArticleCard article={item} />
+            </View>
+          ))}
         </View>
-      </View>
-
-      <ElementModal open={open} setOpen={setOpen} />
+      </ScrollView>
     </>
   );
 }
