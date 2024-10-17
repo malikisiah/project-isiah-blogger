@@ -16,7 +16,8 @@
     "android": {
       "adaptiveIcon": {
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.malikisiah214.projectisiahblogger"
     },
     "web": {
       "bundler": "metro",
@@ -33,6 +34,12 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "9a0ca0ec-1436-4a6f-9624-0ff6832da3a9"
+      }
+    },
+    "owner": "malikisiah214"
   }
 }
