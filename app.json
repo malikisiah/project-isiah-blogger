@@ -17,6 +17,7 @@
       "adaptiveIcon": {
         "backgroundColor": "#ffffff"
       },
+      "softwareKeyboardLayoutMode": "pan",
       "package": "com.malikisiah214.projectisiahblogger"
     },
     "web": {

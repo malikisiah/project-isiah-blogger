@@ -17,7 +17,7 @@ export default function RootLayout() {
     <TRPCReactProvider>
       <PaperProvider theme={theme}>
         <StatusBar style="light" />
-        <Stack>
+        <Stack screenOptions={{ headerShown: false }}>
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         </Stack>
       </PaperProvider>
