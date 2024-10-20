@@ -1,6 +1,8 @@
 import { View, ScrollView } from "react-native";
 import { trpc } from "@/trpc/react";
 import ArticleCard from "@/components/ArticleCard";
+import AntDesign from "@expo/vector-icons/AntDesign";
+import { Link } from "expo-router";
 export default function Tab() {
   const myPosts = trpc.api.getArticles.useQuery();
   return (
@@ -12,6 +14,16 @@ export default function Tab() {
               <ArticleCard article={item} />
             </View>
           ))}
+        </View>
+        <View className="sticky flex items-center  mt-6">
+          <Link href={"/newArticle"}>
+            <AntDesign
+              className=""
+              name="pluscircle"
+              size={30}
+              color={"white"}
+            />
+          </Link>
         </View>
       </ScrollView>
     </>
