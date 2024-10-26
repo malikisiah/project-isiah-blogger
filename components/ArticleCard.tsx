@@ -17,7 +17,7 @@ export default function ArticleCard({ article }: { article: Article }) {
   });
 
   return (
-    <Card>
+    <Card className="mx-2 p-1">
       <Card.Title title={new Date(article.date).toLocaleDateString()} />
       <Card.Content>
         <TextInput
